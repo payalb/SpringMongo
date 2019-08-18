@@ -1,0 +1,21 @@
+[{
+"prodid": 101,
+"description": "Iphone",
+"title": "Iphone Refurbished",
+"Mrp": 83764,
+"_class": "com.java.dto.Product",
+"coords": [-77.00228, 38.23673]
+},
+
+{
+"prodid": 102,
+"description": "Sony speakers",
+"title": "Sony Refurbished",
+"Mrp": 3837,
+"_class": "com.java.dto.Product",
+"coords": [-77.00228, 38.23673]
+}
+]
+
+
+

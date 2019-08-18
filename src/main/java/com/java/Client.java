@@ -2,8 +2,9 @@ package com.java;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.mongodb.core.query.TextCriteria;
 
-import com.java.dao.ProductRepository;
+import com.java.dao.ProductRepositoryOne;
 import com.java.dto.Product;
 
 public class Client {
@@ -11,8 +12,13 @@ public class Client {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig.class);
-		ProductRepository rep = ctx.getBean(ProductRepository.class);
-		System.out.println(rep.getProductById(1));
+		ProductRepositoryOne rep = ctx.getBean(ProductRepositoryOne.class);
+		//System.out.println(rep.findAllByOrderByScoreDesc(TextCriteria.forDefaultLanguage().matching("Refurbished")));
+		//System.out.println(rep.findAllByTitleLike("Refurbished"));
+		Product p = new Product("oppo phone", "A9 model, grey color");
+		p.setPrice(7667.22);
+		
+		System.out.println(rep.save(p));
 		//rep.updateOrInsertProduct();
 		/*for (Product p1 : rep.getAllProducts()) {
 				rep.deleteProduct(p1.getProdid());
